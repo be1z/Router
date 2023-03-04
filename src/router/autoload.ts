@@ -1,3 +1,4 @@
+import { env } from '@/utils/helper'
 import { RouteRecordRaw } from 'vue-router'
 
 //获取布局路由
@@ -40,4 +41,7 @@ function getRouteByModule(k: string, v: any) {
   return Object.assign(route, v.default?.route)
 }
 
-export default getRoutes()
+//是否自动生成路由
+const routes = env.VITE_ROUTER_AUTOLOAD == true ? getRoutes() : ([] as RouteRecordRaw[])
+
+export default routes

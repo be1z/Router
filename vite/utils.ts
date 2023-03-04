@@ -6,7 +6,6 @@ export function parseEnv(env: Record<string, any>): ViteEnv {
     if (v == 'true' || v == 'false') {
       envs[k] = v == 'true' ? true : false
     }
-    console.log(env)
     if (/^\d+$/.test(v)) {
       envs[k] = parseInt(v)
     }

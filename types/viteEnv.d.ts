@@ -1,6 +1,5 @@
 interface ViteEnv {
-  VITE_SOME_KEY: number
-  VITE_ROUTE_AUTOLOAD: Boolean
+  VITE_ROUTER_AUTOLOAD: Boolean
   VITE_API_URL: string
 }
 
