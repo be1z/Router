@@ -2,10 +2,12 @@ import { App } from 'vue'
 import { setupTailwindcss } from './tailwindcss'
 import _ from 'lodash'
 import setupElementplus from './elementui'
+import setupPinia from './pinia'
 export function setupPlugins(app: App) {
   autoRegisterComponent(app)
   setupTailwindcss()
   setupElementplus(app)
+  setupPinia(app)
 }
 
 //自动注册全局组件
