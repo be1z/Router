@@ -5,5 +5,5 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["vite.config.ts", "vite/*.ts", "vite/plugins", "types/*.d.ts", "src/vite-env.d.ts"]
+  "include": ["vite.config.ts", "vite/*.ts", "vite/plugins", "types/*.d.ts", "src/vite-env.d.ts",]
 }

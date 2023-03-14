@@ -3,10 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import alias from './vite/alisa'
 import { parseEnv } from './vite/utils'
 import setupPlugins from './vite/plugins/index'
-// https://vitejs.dev/config/
-// export default defineConfig({
 
-// })
 
 export default ({ command, mode }: ConfigEnv) => {
   const isBuild = command == 'build'

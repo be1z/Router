@@ -16,16 +16,16 @@ const onSubmit = async (data: any) => {
     result: { token },
   } = await userApi.login(data)
   utils.store.set('token', {
-    expire: 5,
+    expire: 1800,
     token,
   })
-  router.push({name:'home'})
+  router.push({ name: 'home' })
 }
 </script>
 
 <script lang="ts">
 export default {
-  route: { name: 'login' },
+  route: { name: 'login', meta: { guest: true } },
 }
 </script>
 
@@ -44,7 +44,7 @@ export default {
               <ErrorMessage name="account" class="hd-error" />
               <Field class="mt-6 hd-input" label="密码" name="password" type="password" placeholder="请输入密码" />
               <ErrorMessage name="password" class="hd-error" />
-              <hdButton />
+              <hdButton class="w-full" />
 
               <div class="flex justify-center items-center">
                 <i class="fa-brands fa-weixin bg-green-500 rounded-full mt-3 text-white p-2"></i>

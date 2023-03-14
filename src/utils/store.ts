@@ -1,5 +1,3 @@
-import { json } from 'stream/consumers'
-
 interface IData {
   expire?: number
   [key: string]: any

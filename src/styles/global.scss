@@ -4,3 +4,10 @@
 .hd-error {
   @apply rounded-md bg-red-600 text-white text-xs py-2 block px-2 mt-2;
 }
+
+.hd-button {
+  @apply bg-purple-500 rounded-md   text-white py-2 hover:bg-purple-700 duration-300;
+  &.danger {
+    @apply bg-green-500 hover:bg-green-700 duration-300;
+  }
+}
