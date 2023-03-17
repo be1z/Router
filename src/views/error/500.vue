@@ -2,7 +2,7 @@
 
 <script lang="ts">
 export default {
-  route: { meta: { show: true, title: '500页面' } },
+  route: { meta: { menu: { title: '500页面' } } },
 }
 </script>
 <template>

@@ -1,25 +1,16 @@
 <script setup lang="ts">
-import userApi from '@/apis/userApi'
 import v from '@/plugins/vaildate/index'
 import utils from '@/utils'
-import { useRouter } from 'vue-router'
+import { Ilogin } from '@/apis/userApi'
 
-const router = useRouter()
 const schema = {
   account: { required: true, email: true },
   password: { required: true, min: 3 },
 }
 const { Form, Field, ErrorMessage } = v
 
-const onSubmit = async (data: any) => {
-  const {
-    result: { token },
-  } = await userApi.login(data)
-  utils.store.set('token', {
-    expire: 1800,
-    token,
-  })
-  router.push({ name: 'home' })
+const onSubmit = async (schema: any) => {
+  await utils.user.login(schema)
 }
 </script>
 

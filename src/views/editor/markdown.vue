@@ -1,17 +1,11 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 <script lang="ts">
 export default {
-  route: { meta: { show: true, icon: 'fab fa-avianex', title: '富文本编辑器' } },
+  route: { meta: { menu: { icon: 'fab fa-avianex', title: 'markdown编辑器' } } },
 }
 </script>
-<template >
+<template>
   <div>markdown</div>
 </template>
 
-
-
-<style>
-
-</style>
+<style></style>

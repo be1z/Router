@@ -1,7 +1,10 @@
 <script setup lang="ts"></script>
 <script lang="ts">
 export default {
-  route: { meta: { show: true, icon: 'fab fa-avianex', title: '编辑器' } },
+  route: {
+    meta: { menu: { icon: 'fab fa-avianex', title: '编辑器' }, auth: true },
+    component: () => import('@/layouts/admin.vue'),
+  },
 }
 </script>
 <template>
