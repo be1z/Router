@@ -5,7 +5,7 @@ export default class Axios {
     this.instance = axios.create(config)
     this.interceptors()
   }
-
+  //封装axios请求
   public request<T, D = ResponseResult<T>>(config: AxiosRequestConfig): Promise<D> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -16,11 +16,12 @@ export default class Axios {
       }
     })
   }
-
+  //初始化
   private interceptors() {
     this.interceptorsRequest()
     this.interceptorsResponse()
   }
+  //请求拦截器
   private interceptorsRequest() {
     this.instance.interceptors.request.use(
       (config) => {
@@ -31,8 +32,8 @@ export default class Axios {
       },
     )
   }
+  //相应拦截器
   private interceptorsResponse() {
-    // 添加响应拦截器
     this.instance.interceptors.response.use(
       (response) => {
         return response

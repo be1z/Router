@@ -28,7 +28,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .text-9xl {
   font-size: 14rem;
 }

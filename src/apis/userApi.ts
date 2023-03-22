@@ -4,6 +4,7 @@ export interface User {
   age: number
   sex: string
   img: string
+  permissions?: string[]
 }
 
 interface LoginInterface {

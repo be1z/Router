@@ -14,6 +14,7 @@ export default [
           age: 22,
           sex: '男',
           img: 'title.jpg',
+          permissions:['editor_markdown','acticle_edit']
         },
       }
     },

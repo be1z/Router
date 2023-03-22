@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import userApi, { User } from '@/apis/userApi'
+//pinia 用户信息
 export default defineStore('user', {
   state: () => {
     return {

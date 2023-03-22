@@ -1,5 +1,6 @@
+import user from '@/store/user'
 import utils from '@/utils'
-import { RouteRecordRaw } from 'vue-router'
+import { RouteRecordRaw, Router } from 'vue-router'
 
 //获取布局路由
 function getRoutes() {
@@ -43,6 +44,20 @@ function getRouteByModule(k: string, v: any) {
 
 //是否自动生成路由
 
-const routes = utils.env.VITE_ROUTER_AUTOLOAD == true ? getRoutes() : ([] as RouteRecordRaw[])
+let routes = utils.env.VITE_ROUTER_AUTOLOAD == true ? getRoutes() : ([] as RouteRecordRaw[])
 
-export default routes
+function addRoutes(router: Router) {
+  const userinfo = user().info
+
+  routes = routes.map((route) => {
+    route.children = route.children?.filter((r) => {
+      const permission = r.meta?.permission
+      console.log(permission)
+      return permission ? userinfo?.permissions?.includes(permission) : true
+    })
+    return route
+  })
+  routes.forEach((r) => router.addRoute(r))
+}
+
+export default addRoutes

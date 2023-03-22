@@ -7,8 +7,8 @@ declare module 'vue-router' {
     auth?: boolean
     guest?: boolean
     //访问权限
-    permissions?: string[]
+    permission?: string
     //路由是否在菜单显示
-    menu?: IMenu[]
+    menu?: IMenu
   }
 }

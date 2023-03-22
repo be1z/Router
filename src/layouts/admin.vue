@@ -14,8 +14,8 @@ onBeforeUpdate(() => {
 </script>
 
 <template>
-  <div class="admin h-screen grid grid-cols-[auto_1fr]">
-    <Menu class="hidden md:block" />
+  <div class="admin h-screen grid md:grid-cols-[auto_1fr]">
+    <Menu />
     <div class="content bg-gray-100 grid grid-rows-[auto_1fr]">
       <div>
         <navbar />

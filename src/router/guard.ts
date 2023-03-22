@@ -10,12 +10,13 @@ class Guard {
   public run() {
     this.router.beforeEach(async (to, from) => {
       const token = store.get(cacheEnum.TOKEN_KEY)?.token
-      console.log(store.get(cacheEnum.TOKEN_KEY))
+
       if (this.isLogin(to, token) == false) return { name: 'login' }
       if (this.isGuest(to, token) == false) return { name: 'home' }
-      await this.getUserInfo(token)
+      // await this.getUserInfo(token)
     })
   }
+  //获取用户信息
   public getUserInfo(token: string | null) {
     if (token) {
       return user().getUserInfo()
@@ -28,7 +29,7 @@ class Guard {
   //登陆用户访问
   private isLogin(to: RouteLocationNormalized, token: any): Boolean {
     const status = Boolean(!to.meta?.auth || (to.meta.auth && token))
-    console.log(status)
+
     if (status == false) utils.store.set(cacheEnum.REDIRECT_ROUTER_NAME, to.name)
     return status
   }
